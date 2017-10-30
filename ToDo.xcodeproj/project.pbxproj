@@ -26,6 +26,8 @@
 		CFA48F911FA1C8A7003140A4 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA48F901FA1C8A7003140A4 /* DetailViewControllerTests.swift */; };
 		CFA48F931FA1C930003140A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA48F921FA1C930003140A4 /* DetailViewController.swift */; };
 		CFA48F961FA1CA9D003140A4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA48F951FA1CA9D003140A4 /* MapKit.framework */; };
+		CFD139101FA32FD70016350A /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1390F1FA32FD70016350A /* InputViewControllerTests.swift */; };
+		CFD139121FA330590016350A /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD139111FA330590016350A /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		CFA48F901FA1C8A7003140A4 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		CFA48F921FA1C930003140A4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CFA48F951FA1CA9D003140A4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CFD1390F1FA32FD70016350A /* InputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerTests.swift; sourceTree = "<group>"; };
+		CFD139111FA330590016350A /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CFA48F901FA1C8A7003140A4 /* DetailViewControllerTests.swift */,
+				CFD1390F1FA32FD70016350A /* InputViewControllerTests.swift */,
 				35EB8DD41FA055C7008229A5 /* ItemCellTests.swift */,
 				35D0E8CA1F9755B5006DD3A2 /* ItemListDataProviderTests.swift */,
 				354BA93E1F974DCA00254333 /* ItemListViewControllerTest.swift */,
@@ -97,10 +102,11 @@
 		354BA9401F974E0F00254333 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				354BA9411F974E1C00254333 /* ItemListViewController.swift */,
 				CFA48F921FA1C930003140A4 /* DetailViewController.swift */,
+				CFD139111FA330590016350A /* InputViewController.swift */,
 				351433711F98A4B600C6657B /* ItemCell.swift */,
 				35D0E8C81F97511A006DD3A2 /* ItemListDataProvider.swift */,
+				354BA9411F974E1C00254333 /* ItemListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD139121FA330590016350A /* InputViewController.swift in Sources */,
 				35085CC21F8BB94D00A3955F /* ItemManager.swift in Sources */,
 				35D0E8C91F97511A006DD3A2 /* ItemListDataProvider.swift in Sources */,
 				35B601FE1F8B3DE6004605E6 /* AppDelegate.swift in Sources */,
@@ -302,6 +309,7 @@
 				35EB8DD51FA055C7008229A5 /* ItemCellTests.swift in Sources */,
 				35D0E8CB1F9755B5006DD3A2 /* ItemListDataProviderTests.swift in Sources */,
 				35085CBE1F8BB8DA00A3955F /* ItemManagerTests.swift in Sources */,
+				CFD139101FA32FD70016350A /* InputViewControllerTests.swift in Sources */,
 				35085CBC1F8BB72300A3955F /* LocationTests.swift in Sources */,
 				CFA48F911FA1C8A7003140A4 /* DetailViewControllerTests.swift in Sources */,
 				354BA93F1F974DCA00254333 /* ItemListViewControllerTest.swift in Sources */,
