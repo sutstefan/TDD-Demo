@@ -21,7 +21,7 @@ class ItemListDataProviderTests: XCTestCase {
         sut = ItemListDataProvider()
         sut.itemManager = ItemManager()
         
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         controller = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
         
         _ = controller.view
@@ -161,7 +161,7 @@ extension ItemListDataProviderTests {
         }
         
         class func mockTableView(withDataSource dataSource: UITableViewDataSource) -> MockTableView {
-            let mockTableView = MockTableView.init(frame: CGRect(x: 0, y: 0, width: 320, height: 480), style: .plain)
+            let mockTableView = MockTableView(frame: CGRect(x: 0, y: 0, width: 320, height: 480), style: .plain)
             mockTableView.dataSource = dataSource
             mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "ItemCell")
             

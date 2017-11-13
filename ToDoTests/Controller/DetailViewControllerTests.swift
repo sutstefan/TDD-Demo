@@ -38,8 +38,8 @@ class DetailViewControllerTests: XCTestCase {
     func test_SettinItemInfo_SetsTextToLabels() {
         let coordinate = CLLocationCoordinate2DMake(51.2277, 6.7735)
         
-        let location = Location.init(name: "Foo", coordinate: coordinate)
-        let item = ToDoItem.init(title: "Bar", itemDescription: "Baz", timestamp: 1456150025, location: location)
+        let location = Location(name: "Foo", coordinate: coordinate)
+        let item = ToDoItem(title: "Bar", itemDescription: "Baz", timestamp: 1456150025, location: location)
         
         let itemManager = ItemManager()
         itemManager.add(item)
