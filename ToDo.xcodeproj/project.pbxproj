@@ -29,6 +29,7 @@
 		CFA48F911FA1C8A7003140A4 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA48F901FA1C8A7003140A4 /* DetailViewControllerTests.swift */; };
 		CFA48F931FA1C930003140A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA48F921FA1C930003140A4 /* DetailViewController.swift */; };
 		CFA48F961FA1CA9D003140A4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA48F951FA1CA9D003140A4 /* MapKit.framework */; };
+		CFA8CBB71FBAF50F00336561 /* StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8CBB61FBAF50F00336561 /* StoryboardTests.swift */; };
 		CFD139101FA32FD70016350A /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1390F1FA32FD70016350A /* InputViewControllerTests.swift */; };
 		CFD139121FA330590016350A /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD139111FA330590016350A /* InputViewController.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		CFA48F901FA1C8A7003140A4 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		CFA48F921FA1C930003140A4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CFA48F951FA1CA9D003140A4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CFA8CBB61FBAF50F00336561 /* StoryboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardTests.swift; sourceTree = "<group>"; };
 		CFD1390F1FA32FD70016350A /* InputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerTests.swift; sourceTree = "<group>"; };
 		CFD139111FA330590016350A /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,8 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				354BA93D1F974DA000254333 /* Controller */,
-				35B6021F1F8B4180004605E6 /* Model */,
 				35B602141F8B3DE6004605E6 /* Info.plist */,
+				35B6021F1F8B4180004605E6 /* Model */,
+				CF4AB8651FBC11A700C220FF /* Storyboard */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -181,6 +184,14 @@
 				35085CC11F8BB94D00A3955F /* ItemManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CF4AB8651FBC11A700C220FF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CFA8CBB61FBAF50F00336561 /* StoryboardTests.swift */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		CFA48F941FA1CA9D003140A4 /* Frameworks */ = {
@@ -323,6 +334,7 @@
 				CFD139101FA32FD70016350A /* InputViewControllerTests.swift in Sources */,
 				35085CBC1F8BB72300A3955F /* LocationTests.swift in Sources */,
 				CFA48F911FA1C8A7003140A4 /* DetailViewControllerTests.swift in Sources */,
+				CFA8CBB71FBAF50F00336561 /* StoryboardTests.swift in Sources */,
 				CFA1DF601FAB0CC400664346 /* APIClientTests.swift in Sources */,
 				354BA93F1F974DCA00254333 /* ItemListViewControllerTest.swift in Sources */,
 				35B602211F8B4229004605E6 /* ToDoItemTests.swift in Sources */,

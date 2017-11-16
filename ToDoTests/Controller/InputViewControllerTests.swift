@@ -125,11 +125,25 @@ class InputViewControllerTests: XCTestCase {
         waitForExpectations(timeout: 3, handler: nil)
     }
     
+    func test_Save_DismissesViewController() {
+        let mockInputViewController = MockInputViewController()
+        mockInputViewController.titleTextField = UITextField()
+        mockInputViewController.dateTextField = UITextField()
+        mockInputViewController.locationTextField = UITextField()
+        mockInputViewController.addressTextField = UITextField()
+        mockInputViewController.descriptionTextField = UITextField()
+        mockInputViewController.titleTextField.text = "Test Title"
+        
+        mockInputViewController.save()
+        
+        XCTAssertTrue(mockInputViewController.dismissedGotCalled)
+    }
+    
 }
 
 extension InputViewControllerTests {
+   
     class MockGeocoder: CLGeocoder {
-        
         var completionHandler: CLGeocodeCompletionHandler?
         
         override
@@ -139,7 +153,6 @@ extension InputViewControllerTests {
     }
     
     class MockPlacemark: CLPlacemark {
-        
         var mockCoordinate: CLLocationCoordinate2D?
         
         override var location: CLLocation? {
@@ -147,6 +160,14 @@ extension InputViewControllerTests {
                 return CLLocation()
             }
             return CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        }
+    }
+    
+    class MockInputViewController: InputViewController {
+        var dismissedGotCalled = false
+        
+        override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+            dismissedGotCalled = true
         }
     }
     

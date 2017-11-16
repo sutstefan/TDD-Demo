@@ -42,4 +42,60 @@ class ItemListViewControllerTest: XCTestCase {
     func test_LoadingView_SetsDataSourceAndDelegateToSameObject() {
         XCTAssertEqual(sut.tableView.dataSource is ItemListDataProvider, sut.tableView.delegate is ItemListDataProvider)
     }
+    
+    func test_ItemListViewController_HasAddBarButtonWithSelfAsATarget() {
+        let target = sut.navigationItem.rightBarButtonItem?.target
+        XCTAssertEqual(target as? UIViewController, sut)
+    }
+    
+    func test_AddItem_PresentsAddItemViewController() {
+        XCTAssertNil(sut.presentedViewController)
+        
+        guard let addButton = sut.navigationItem.rightBarButtonItem else {
+            XCTFail()
+            return
+        }
+        guard let action = addButton.action else {
+            XCTFail()
+            return
+        }
+        UIApplication.shared.keyWindow?.rootViewController = sut
+        
+        sut.performSelector(onMainThread: action, with: addButton, waitUntilDone: true)
+        
+        XCTAssertNotNil(sut.presentedViewController)
+        XCTAssertTrue(sut.presentedViewController is InputViewController)
+        
+        let inputViewController = sut.presentedViewController as! InputViewController
+        XCTAssertNotNil(inputViewController.titleTextField)
+    }
+    
+    func test_ItemListVC_SharesItemManagerWithInputVC() {
+        guard let addButton = sut.navigationItem.rightBarButtonItem else {
+            XCTFail()
+            return
+        }
+        guard let action = addButton.action else {
+            XCTFail()
+            return
+        }
+        UIApplication.shared.keyWindow?.rootViewController = sut
+        
+        sut.performSelector(onMainThread: action, with: addButton, waitUntilDone: true)
+        
+        guard let inputViewController = sut.presentedViewController as? InputViewController else {
+            XCTFail()
+            return
+        }
+        guard let inputItemManager = inputViewController.itemManager else {
+            XCTFail()
+            return
+        }
+        XCTAssertTrue(sut.itemManager == inputItemManager)
+    }
+    
+    func test_ViewDidLoad_SetsItemManagerToDataProvider() {
+        XCTAssertTrue(sut.itemManager === sut.dataProvider.itemManager)
+    }
+    
 }
