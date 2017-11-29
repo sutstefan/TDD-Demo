@@ -6,10 +6,40 @@
 //  Copyright © 2017 Stefan Sut. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ItemManager: NSObject {
-   
+    
+    override init() {
+        super.init()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(save), name: .UIApplicationWillResignActive, object: nil)
+        
+        if let nsToDoItems = NSArray(contentsOf: toDoPathURL) {
+            for dict in nsToDoItems {
+                if let toDoItem = ToDoItem(dict: dict as! [String: Any]) {
+                    toDoItems.append(toDoItem)
+                }
+            }
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        save()
+    }
+    
+    var toDoPathURL: URL {
+        let fileURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        guard let documentURL = fileURLs.first else {
+            print("Something went wrong. Documents url could not be found.")
+            fatalError()
+        }
+        
+        return documentURL.appendingPathComponent("toDoItems.plist")
+    }
+    
     var toDoCount: Int { return toDoItems.count }
     var doneCount: Int { return doneItems.count }
     
@@ -45,5 +75,20 @@ class ItemManager: NSObject {
         doneItems.removeAll()
     }
     
+    @objc func save() {
+        let nsToDoItems = toDoItems.map({ $0.plistDict })
+        
+        guard !nsToDoItems.isEmpty else {
+            try? FileManager.default.removeItem(at: toDoPathURL)
+            return
+        }
+        do {
+            let plistData = try PropertyListSerialization.data(fromPropertyList: nsToDoItems, format: .xml, options: PropertyListSerialization.WriteOptions(0))
+            try plistData.write(to: toDoPathURL, options: .atomic)
+            
+        } catch {
+            print(error)
+        }
+    }
 }
 

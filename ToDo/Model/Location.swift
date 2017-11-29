@@ -19,6 +19,39 @@ struct Location {
         self.coordinate = coordinate
     }
     
+    init?(dict: [String: Any]) {
+        guard let name = dict[nameKey] as? String else { return nil }
+        
+        let coordinate: CLLocationCoordinate2D?
+        if let latitude = dict[latitudeKey] as? Double, let longitude = dict[longitudeKey] as? Double {
+            coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        } else {
+            coordinate = nil
+        }
+        
+        self.name = name
+        self.coordinate = coordinate
+    }
+    
+    var plistDict: [String: Any] {
+        var dict = [String: Any]()
+        
+        dict[nameKey] = name
+        
+        if let coordinate = coordinate {
+            dict[latitudeKey] = coordinate.latitude
+            dict[longitudeKey] = coordinate.longitude
+        }
+        
+        return dict
+    }
+    
+    // MARK: Private
+    
+    private let nameKey = "nameKey"
+    private let latitudeKey = "latitudeKey"
+    private let longitudeKey = "longitudeKey"
+    
 }
 
 extension Location: Equatable {

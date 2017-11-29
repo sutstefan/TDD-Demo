@@ -59,10 +59,7 @@ class ItemCellTests: XCTestCase {
     
     func test_Title_WhenItemIsChecked_IsStokeThrough() {
         let location = Location(name: "Bar")
-        let item = ToDoItem(title: "Foo",
-                            itemDescription: nil,
-                            timestamp: 1456150025,
-                            location: location)
+        let item = ToDoItem(title: "Foo", itemDescription: nil, timestamp: 1456150025, location: location)
         
         cell.configCell(with: item, checked: true)
         
