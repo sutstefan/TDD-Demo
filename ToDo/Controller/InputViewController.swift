@@ -40,25 +40,28 @@ class InputViewController: UIViewController {
         let descriptionString = descriptionTextField.text
         if let locationName = locationTextField.text, locationName.count > 0 {
             if let address = addressTextField.text, address.count > 0 {
-                geocoder.geocodeAddressString(address, completionHandler: { [unowned self] (placemarks, error) in
-                    let placemark = placemarks?.first
+                geocoder.geocodeAddressString(address) {
+                    [unowned self] (placeMarks, error) -> Void in
+                    let placeMark = placeMarks?.first
+    
+                    let item = ToDoItem(title: titleString, itemDescription: descriptionString, timestamp: date?.timeIntervalSince1970, location: Location(name: locationName, coordinate: placeMark?.location?.coordinate))
                     
-                    let item = ToDoItem(title: titleString, itemDescription: descriptionString, timestamp: date?.timeIntervalSince1970, location: Location(name: locationName, coordinate: placemark?.location?.coordinate))
-                    self.itemManager?.add(item)
-                    
-                })
+                    DispatchQueue.main.async(execute: {
+                        self.itemManager?.add(item)
+                        self.dismiss(animated: true)
+                    })
+                }
             } else {
                 let item = ToDoItem(title: titleString, itemDescription: descriptionString, timestamp: date?.timeIntervalSince1970, location: nil)
                 self.itemManager?.add(item)
                 dismiss(animated: true)
             }
         } else {
-            let item = ToDoItem(title: titleString, itemDescription: descriptionString, timestamp: date?.timeIntervalSince1970, location: nil)
+            let item = ToDoItem(title: titleString, itemDescription: descriptionString, timestamp: date?.timeIntervalSince1970)
+            
             self.itemManager?.add(item)
             dismiss(animated: true)
         }
-        
-        self.dismiss(animated: true)
     }
     
 }

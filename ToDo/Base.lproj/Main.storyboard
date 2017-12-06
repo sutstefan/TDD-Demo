@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZd-Zh-TIi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZd-Zh-TIi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -150,51 +150,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDl-qA-I8c">
-                                <rect key="frame" x="16" y="20" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rDl-qA-I8c">
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="u7U-hC-bAg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ial-vV-i3P">
-                                <rect key="frame" x="16" y="58" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ial-vV-i3P">
+                                <rect key="frame" x="16" y="58" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SoV-Sp-Q7N"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o9D-Fi-f3v">
-                                <rect key="frame" x="16" y="96" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o9D-Fi-f3v">
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="yMf-vG-a04"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igc-aL-c2Z">
-                                <rect key="frame" x="16" y="134" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igc-aL-c2Z">
+                                <rect key="frame" x="16" y="134" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wx4-WI-OJt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lg9-2H-0wo">
-                                <rect key="frame" x="16" y="172" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lg9-2H-0wo">
+                                <rect key="frame" x="16" y="172" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PVf-SM-Z3X"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCy-At-Yyn">
-                                <rect key="frame" x="16" y="210" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCy-At-Yyn">
+                                <rect key="frame" x="16" y="210" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="00c-B2-gnT"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="save" destination="au6-6G-jVm" eventType="touchUpInside" id="cvV-O6-BZa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hb-oX-8p4">
-                                <rect key="frame" x="16" y="248" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hb-oX-8p4">
+                                <rect key="frame" x="209" y="210" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Hf9-aG-1fd"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rDl-qA-I8c" firstAttribute="top" secondItem="M5m-eJ-RVz" secondAttribute="top" id="9r0-U3-4md"/>
+                            <constraint firstItem="igc-aL-c2Z" firstAttribute="leading" secondItem="M5m-eJ-RVz" secondAttribute="leading" constant="16" id="AEr-IQ-0bC"/>
+                            <constraint firstItem="M5m-eJ-RVz" firstAttribute="trailing" secondItem="Lg9-2H-0wo" secondAttribute="trailing" constant="16" id="BZC-jT-cI8"/>
+                            <constraint firstItem="M5m-eJ-RVz" firstAttribute="trailing" secondItem="rDl-qA-I8c" secondAttribute="trailing" constant="16" id="CJ0-6U-oR4"/>
+                            <constraint firstItem="igc-aL-c2Z" firstAttribute="top" secondItem="o9D-Fi-f3v" secondAttribute="bottom" constant="8" id="EQk-Sd-0Vm"/>
+                            <constraint firstItem="sCy-At-Yyn" firstAttribute="top" secondItem="Lg9-2H-0wo" secondAttribute="bottom" constant="8" id="Mrc-Zp-mIP"/>
+                            <constraint firstItem="6hb-oX-8p4" firstAttribute="leading" secondItem="sCy-At-Yyn" secondAttribute="trailing" constant="43" id="N2d-12-HIz"/>
+                            <constraint firstItem="Ial-vV-i3P" firstAttribute="leading" secondItem="M5m-eJ-RVz" secondAttribute="leading" constant="16" id="Q4C-Vf-rCr"/>
+                            <constraint firstItem="M5m-eJ-RVz" firstAttribute="trailing" secondItem="6hb-oX-8p4" secondAttribute="trailing" constant="16" id="R7D-jr-Qkc"/>
+                            <constraint firstItem="Lg9-2H-0wo" firstAttribute="top" secondItem="igc-aL-c2Z" secondAttribute="bottom" constant="8" id="Uew-bE-lLZ"/>
+                            <constraint firstItem="6hb-oX-8p4" firstAttribute="top" secondItem="Lg9-2H-0wo" secondAttribute="bottom" constant="8" id="YDN-g4-hbv"/>
+                            <constraint firstItem="M5m-eJ-RVz" firstAttribute="trailing" secondItem="o9D-Fi-f3v" secondAttribute="trailing" constant="16" id="bbt-a9-F1e"/>
+                            <constraint firstItem="6hb-oX-8p4" firstAttribute="width" secondItem="sCy-At-Yyn" secondAttribute="width" id="br8-OV-fRc"/>
+                            <constraint firstItem="sCy-At-Yyn" firstAttribute="leading" secondItem="M5m-eJ-RVz" secondAttribute="leading" constant="16" id="c2z-9y-gvN"/>
+                            <constraint firstItem="M5m-eJ-RVz" firstAttribute="trailing" secondItem="Ial-vV-i3P" secondAttribute="trailing" constant="16" id="cxG-aB-Jwv"/>
+                            <constraint firstItem="Lg9-2H-0wo" firstAttribute="leading" secondItem="M5m-eJ-RVz" secondAttribute="leading" constant="16" id="df4-HW-Mf8"/>
+                            <constraint firstItem="rDl-qA-I8c" firstAttribute="leading" secondItem="M5m-eJ-RVz" secondAttribute="leading" constant="16" id="dgK-fZ-bxT"/>
+                            <constraint firstItem="Ial-vV-i3P" firstAttribute="top" secondItem="rDl-qA-I8c" secondAttribute="bottom" constant="8" id="hLN-zG-9XN"/>
+                            <constraint firstItem="M5m-eJ-RVz" firstAttribute="trailing" secondItem="igc-aL-c2Z" secondAttribute="trailing" constant="16" id="hcp-uj-hlu"/>
+                            <constraint firstItem="o9D-Fi-f3v" firstAttribute="top" secondItem="Ial-vV-i3P" secondAttribute="bottom" constant="8" id="uG1-2B-6wv"/>
+                            <constraint firstItem="o9D-Fi-f3v" firstAttribute="leading" secondItem="M5m-eJ-RVz" secondAttribute="leading" constant="16" id="zid-sO-f9r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="M5m-eJ-RVz"/>
                     </view>
                     <connections>
