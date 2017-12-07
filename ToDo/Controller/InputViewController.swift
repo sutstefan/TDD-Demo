@@ -43,7 +43,7 @@ class InputViewController: UIViewController {
                 geocoder.geocodeAddressString(address) {
                     [unowned self] (placeMarks, error) -> Void in
                     let placeMark = placeMarks?.first
-    
+                    
                     let item = ToDoItem(title: titleString, itemDescription: descriptionString, timestamp: date?.timeIntervalSince1970, location: Location(name: locationName, coordinate: placeMark?.location?.coordinate))
                     
                     DispatchQueue.main.async(execute: {
@@ -63,5 +63,10 @@ class InputViewController: UIViewController {
             dismiss(animated: true)
         }
     }
+    
+    @IBAction func save(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     
 }

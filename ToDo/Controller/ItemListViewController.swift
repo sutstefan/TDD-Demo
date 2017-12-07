@@ -22,6 +22,8 @@ class ItemListViewController: UIViewController {
     // MARK: Lifecycle
     
     override func viewDidLoad() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80
         tableView.dataSource = dataProvider
         tableView.delegate = dataProvider
         dataProvider.itemManager = itemManager

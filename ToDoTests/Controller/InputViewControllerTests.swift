@@ -70,7 +70,7 @@ class InputViewControllerTests: XCTestCase {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         
-        let timestamp = 1456095600.0
+        let timestamp = 1456092000.0
         let date = Date(timeIntervalSince1970: timestamp)
         
         mockSut.titleTextField.text = "Foo"
@@ -93,7 +93,7 @@ class InputViewControllerTests: XCTestCase {
         mockSut.save()
         
         placemark = MockPlacemark()
-        let coordinate = CLLocationCoordinate2DMake(37.331686, -122.030656)
+        let coordinate = CLLocationCoordinate2DMake(37.3316851, -122.0300674)
         placemark.mockCoordinate = coordinate
         mockGeocoder.completionHandler?([placemark], nil)
         
